@@ -1,6 +1,10 @@
-# ASL Hand Sign Recognition App
+# ASL Hand Sign Recognition App — Bridging Communication for the Deaf & Mute Community
 
-A real-time **American Sign Language (ASL) hand sign detection** app built with **React**, **TensorFlow.js**, and **MediaPipe Hands**. It uses your webcam feed to detect your hand, extract 21 key hand landmarks, and classify them into ASL hand signs.
+This project is more than just a technical demo — it is built as a **communication bridge** between individuals who are **deaf or mute** and the wider world. Using cutting‑edge camera‑based gesture recognition, this app translates ASL gestures into readable on‑screen text in real time.
+
+Its goal is to serve as a **feature similar to FaceTime accessibility tools**, enabling smoother, faster and more natural communication between people with hearing or speech impairments and those who do not understand sign language.
+
+By combining **machine learning**, **hand‑tracking AI**, and **a simple camera interface**, this project aims to reduce communication barriers and make digital interaction more inclusive.
 
 ---
 
