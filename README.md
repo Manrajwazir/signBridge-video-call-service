@@ -88,7 +88,7 @@ npm -v
 
 ### **2. Install Dependencies**
 
-Open your project folder and run:
+Open your project folder and run in both client and server folder:
 
 ```
 npm install
@@ -96,7 +96,13 @@ npm install
 
 ---
 
-### **3. Start Development Server**
+### **3. Start Server in server folder root**
+
+```
+node server.js
+```
+
+### **3. In the client folder as root run**
 
 ```
 npm run dev
@@ -123,47 +129,7 @@ If webcam doesn't start:
 
 ---
 
-## 🧠 Model Information
-
-The model is stored in:
-
-```
-/public/model/
-```
-
-This includes:
-
-* `model.json`
-* `group1-shard1.bin` (and others)
-
 This model receives 21 hand landmark coordinates and predicts the sign.
-
----
-
-## ❗ Troubleshooting
-
-### **❌ Error: Cannot read properties of undefined (reading 'load')**
-
-This means the ML model failed to load.
-Fix:
-
-* Ensure folder name is exactly: `public/model/`
-* Ensure `model.json` exists
-* Paths must match:
-
-```
-await tf.loadGraphModel('/model/model.json')
-```
-
----
-
-### **❌ AbortError: play() request interrupted by load()**
-
-Happens when video restarts too fast.
-Fix:
-
-* Only call `video.play()` once
-* Wrap video initialization in `useEffect` with proper cleanup
 
 ---
 
@@ -204,7 +170,7 @@ Thumbs.db
 
 ## 📄 License
 
-This project is for **personal and educational** use.
+MIT License
 
 ---
 
@@ -215,10 +181,3 @@ This project is for **personal and educational** use.
 * React & Vite
 
 ---
-
-If you want, I can:
-
-* Polish the README more
-* Add screenshots & gifs
-* Create documentation for your functions
-* Add installation commands for Windows/Mac/Linux
