@@ -40,22 +40,29 @@ By combining **machine learning**, **hand‑tracking AI**, and **a simple camera
 ## 📁 Project Structure
 
 ```
-project-folder/
+SIGNBRIDGE-VIDEO-CALL-SERVER/
 │
-├── public/
-│   ├── model/            # TFJS model (model.json + weights)
-│   ├── index.html
+├── client/
+│ ├── node_modules/
+│ ├── public/
+│ ├── src/
+│ │ ├── assets/
+│ │ ├── App.jsx
+│ │ ├── App.css
+│ │ ├── index.css
+│ │ └── main.jsx
+│ ├── .gitignore
+│ ├── eslint.config.js
+│ ├── index.html
+│ ├── package.json
+│ ├── package-lock.json
+│ ├── README.md
+│ └── vite.config.js
 │
-├── src/
-│   ├── App.jsx           # Main component
-│   ├── components/       # UI components
-│   ├── utils/            # Hand logic, helpers
-│   ├── assets/           # Images/icons
-│   └── main.jsx
+├── server/
+│ └── .gitignore
 │
-├── .gitignore
-├── package.json
-└── README.md
+└── .gitignore
 ```
 
 ---
