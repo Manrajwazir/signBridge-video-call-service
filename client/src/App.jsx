@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { Camera, Video, Mic, MicOff, PhoneOff, User, Activity, Send, Trash2 } from 'lucide-react';
 
-// --- CONFIGURATION ---
 const CONFIG = {
   CAMERA: { video: { facingMode: "user" }, audio: false },
   AI: { REQUIRED_HOLD_FRAMES: 15, POLL_INTERVAL: 100 },
@@ -140,11 +139,11 @@ export default function App() {
 
   return (
     <div style={styles.appContainer}>
-      {/* HEADER */}
+      {}
       <header style={styles.header}>
         <div style={styles.logoGroup}>
           <Activity size={20} color="#3b82f6" />
-          <span style={styles.title}>SignNode <span style={styles.badge}>LITE</span></span>
+          <span style={styles.title}>SignBridge <span style={styles.badge}>LITE</span></span>
         </div>
         <div style={styles.userGroup}>
           <span style={{ fontSize: '12px', color: '#aaa' }}>Dr. Sarah (Online)</span>
@@ -152,9 +151,9 @@ export default function App() {
         </div>
       </header>
 
-      {/* MAIN */}
+      {}
       <div style={styles.main}>
-        {/* LEFT: VIDEO */}
+        {}
         <div style={styles.videoStage}>
           <div style={styles.videoContainer}>
             {loading && <div style={styles.loadingOverlay}>Initializing AI...</div>}
@@ -199,7 +198,7 @@ export default function App() {
             </div>
             <div style={styles.manualControls}>
                <button onClick={() => setSentence(prev => prev.slice(0, -1))} style={styles.iconBtn}><Trash2 size={16}/></button>
-               <button onClick={() => {/* manual send */}} style={styles.iconBtn}><Send size={16}/></button>
+               <button onClick={() => {}} style={styles.iconBtn}><Send size={16}/></button>
             </div>
           </div>
         </div>
