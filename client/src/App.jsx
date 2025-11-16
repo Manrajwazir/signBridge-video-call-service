@@ -50,14 +50,29 @@ const useHandTracking = (videoRef, canvasRef, onGesture) => {
   useEffect(() => {
     const init = async () => {
       try {
-        if (!window.tf) await loadScript("https://cdn.jsdelivr.net/npm/@tensorflow/tfjs");
-        if (!window.handpose) await loadScript("https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose");
+        // Load TensorFlow first and wait for it to be ready
+        if (!window.tf) {
+          await loadScript("https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js");
+        }
         await window.tf.ready();
+        
+        // Then load handpose model
+        if (!window.handpose) {
+          await loadScript("https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose@0.0.7/dist/handpose.js");
+        }
+        
+        // Wait a bit for handpose to initialize
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
         const net = await window.handpose.load();
         setModel(net);
         setLoading(false);
         setStatus('Ready');
-      } catch (err) { console.error(err); setStatus('AI Error'); }
+      } catch (err) { 
+        console.error('AI Init Error:', err); 
+        setStatus('AI Error - Refresh page'); 
+        setLoading(false);
+      }
     };
     init();
   }, []);
